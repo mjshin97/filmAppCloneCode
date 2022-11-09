@@ -1,19 +1,19 @@
-<!DOCTYPE html> <!--#2.1 Before React (07:02)-->
+<!DOCTYPE html> <!--#2.2 Our First React Element (10:31)-->
 <html> 
-    <body><!--step number1 : create HTML-->
-        <span>Total clicks : 0</span>
-        <button id = "btn">CLick me</button>
-    </body><!--step number1-->
+    <body>
+        <div id="root"></div>
+    </body>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
     <script>
-        let counter = 0;
-        const button = document.getElementById("btn"); //step number2 : grab it from JS
-        const span = document.querySelector("span"); //step number2 : grab it from JS
-        function handleClick(){
-            counter = counter +1; //step number4 : update data
-            span.innerText = `Total clicks : ${counter}`; // last step : update your HTML
-        }
-        button.addEventListener("click", handleClick); //step number2 : listen for event
+        const root = document.getElementById("root");
+        const span = React.createElement(
+            "span",
+            {id: "sexy-span", style: {color: "red" } },
+            "Hello I'm a span"
+        );
+        ReactDOM.render(span, root)
     </script>
 </html>
-<!--20221108 16:05 ~ 17:05-->
+<!--20221109 13:08 ~ 14:08-->
 <!--git remote add origin https://github.com/mjshin97/filmAppCloneCode.git-->
