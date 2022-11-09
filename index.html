@@ -1,4 +1,4 @@
-<!DOCTYPE html> <!--#2.2 Our First React Element (10:31)-->
+<!DOCTYPE html> <!--#2.3 Events in React (08:01)-->
 <html> 
     <body>
         <div id="root"></div>
@@ -7,12 +7,26 @@
     <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
     <script>
         const root = document.getElementById("root");
-        const span = React.createElement(
-            "span",
-            {id: "sexy-span", style: {color: "red" } },
+        const h3 = React.createElement(//what we have to do is just create Element
+            "h3", 
+            {   
+                id:"title", //you can change ID here
+                onMouseEnter: () => console.log("mouse enter"),
+            }, 
             "Hello I'm a span"
         );
-        ReactDOM.render(span, root)
+        const btn = React.createElement(
+            "button", 
+            {
+                onClick: () => console.log("I'm clicked"), //this is Masive power of ReactJS!!!
+                style : {
+                    backgroundColor:"tomato", //you can even change colour!
+                }
+            }, 
+            "click me"
+        );
+        const container = React.createElement("div", null, [h3, btn]);
+        ReactDOM.render(container, root)
     </script>
 </html>
 <!--20221109 13:08 ~ 14:08-->
