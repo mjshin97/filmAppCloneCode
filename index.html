@@ -1,33 +1,32 @@
-<!DOCTYPE html> <!--#2.4 Recap (05:47)-->
-<html> 
-    <body>
-        <div id="root"></div>
-    </body>
-    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
-    <script>
-        const root = document.getElementById("root");
-        const h3 = React.createElement(//what we have to do is just create Element
-            "h3", 
-            {   
-                id:"title", //you can change ID here
-                onMouseEnter: () => console.log("mouse enter"),
-            }, 
-            "Hello I'm a title"
-        );
-        const btn = React.createElement(
-            "button", 
-            {
-                onClick: () => console.log("I'm clicked"), //this is Masive power of ReactJS!!!
-                style : {
-                    backgroundColor:"tomato", //you can even change colour!
-                },
-            }, 
-            "click me"
-        );
-        const container = React.createElement("div", null, [h3, btn]);
-        ReactDOM.render(container, root)
-    </script>
+<!DOCTYPE html>
+<!--#2.5 JSX (08:22) ERROR-->
+<html>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    const root = document.getElementById("root");
+    const Title = (
+      <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
+        Hello I'm a title
+      </h3>
+    );
+    const Button = (
+      <Button
+        style={{
+          backgroundColor: "tomato", //you can even change colour!
+        }}
+        onClick={() => console.log("I'm clicked")}
+      >
+        Click me
+      </Button>
+    );
+    const container = React.createElement("div", null, [Title, Button]);
+    ReactDOM.render(container, root);
+  </script>
 </html>
-<!--20221110 15:43 ~ 16:43-->
+<!--20221110 14:26 ~ 15:26-->
 <!--git remote add origin https://github.com/mjshin97/filmAppCloneCode.git-->
