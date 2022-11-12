@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<!--#2.5 JSX (08:22) ERROR-->
+<!DOCTYPE html><!--#2.5 JSX (08:22) ERROR-->
 <html>
   <body>
     <div id="root"></div>
@@ -15,18 +14,18 @@
       </h3>
     );
     const Button = (
-      <Button
+      <button
         style={{
           backgroundColor: "tomato", //you can even change colour!
         }}
         onClick={() => console.log("I'm clicked")}
       >
         Click me
-      </Button>
+      </button>
     );
     const container = React.createElement("div", null, [Title, Button]);
     ReactDOM.render(container, root);
   </script>
 </html>
-<!--20221110 14:26 ~ 15:26-->
+<!--20221113 01:06 ~ 01:11-->
 <!--git remote add origin https://github.com/mjshin97/filmAppCloneCode.git-->
