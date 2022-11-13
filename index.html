@@ -1,4 +1,4 @@
-<!DOCTYPE html> <!--#2.5 JSX (08:22)-->
+<!DOCTYPE html><!--#2.6 JSX part Two (07:19)-->
 <html>
   <body>
     <div id="root"></div>
@@ -8,12 +8,14 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
     const root = document.getElementById("root");
-    const Title = (
-      <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
-        Hello I'm a title
-      </h3>
-    );
-    const Button = (
+    function Title() {//this function title is same as doing creating Button
+      return (
+        <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
+          Hello I'm a title
+        </h3>
+      );
+    }
+    const Button = () => (//created for line31
       <button
         style={{
           backgroundColor: "tomato", //you can even change colour!
@@ -23,9 +25,16 @@
         Click me
       </button>
     );
-    const container = React.createElement("div", null, [Title, Button]);
-    ReactDOM.render(container, root);
+    const Container = () => (
+      <div>
+        <Title />
+        <Button />
+      </div>
+    );
+    ReactDOM.render(<Container />, root);
   </script>
 </html>
-<!--20221113 01:06 ~ 01:11-->
+<!-- const Title = () => (); (we call this arrow function) == function Title(){}-->
+<!--feedback : you always need to be careful to distinguish UPPERCASE and LOWERCASE-->
+<!--20221113 09:35 ~ 10:35-->
 <!--git remote add origin https://github.com/mjshin97/filmAppCloneCode.git-->
