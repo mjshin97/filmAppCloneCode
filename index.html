@@ -1,4 +1,4 @@
-<!DOCTYPE html> <!--#3.0 Understanding State (13:34)-->
+<!DOCTYPE html> <!--#3.1 setState part One (11:53)-->
 <html>
   <body>
     <div id="root"></div>
@@ -8,24 +8,17 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
     const root = document.getElementById("root");
-    let counter = 0;
-    function countUp() {
-      counter = counter + 1;
-      render();
-    }
-    function render() {
-      ReactDOM.render(<Container />, root);
-    }
-    function Container() {
+    function App() {
+      const [counter, modifier] = React.useState(0);
       return (
         <div>
           <h3>Total clicks : {counter}</h3>
-          <button onClick={countUp}>Click me</button>
+          <button>Click me</button>
         </div>
       );
     }
-    render();
+    ReactDOM.render(<App />, root);
   </script>
 </html>
-<!--20221116 14:30 ~ 15:30-->
+<!--20221116 14:30 ~ 15:48-->
 <!--git remote add origin https://github.com/mjshin97/filmAppCloneCode.git-->
