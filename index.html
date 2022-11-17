@@ -1,27 +1,37 @@
-<!DOCTYPE html> <!--#3.4 State Functions (05:52)-->
+<!DOCTYPE html> <!--#3.5 Inputs and State (10:29)-->
 <html>
   <body>
     <div id="root"></div>
   </body>
-  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
-  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
     function App() {
-      const [counter, setCounter] = React.useState(0);
-      const onClick = () => {
-        //setCounter(counter + 1); //
-        setCounter((current) => current + 1);
+      const [minutes, setMinutes] = React.useState();
+      const onChange = (event) => {
+        setMinutes(event.target.value);
       };
       return (
         <div>
-          <h3>Total clicks : {counter}</h3>
-          <button onClick={onClick}>Click me</button>
+          <h1 className="hi">Super Converter</h1>
+          <label htmlFor="minutes">Minutes</label>
+          <input
+            value={minutes}
+            id="minutes"
+            placeholder="Minutes"
+            type="number"
+            onChange={onChange}
+          />
+          <h4>You want to convert {minutes}</h4>
+          <label htmlFor="hours">Hours</label>
+          <input id="hours" placeholder="Hours" type="number" />
         </div>
       );
     }
+    const root = document.getElementById("root");
     ReactDOM.render(<App />, root);
   </script>
 </html>
-<!--20221117 16:00 ~ 17:00-->
+<!--20221117 16:00 ~ 19:07-->
 <!--git remote add origin https://github.com/mjshin97/filmAppCloneCode.git-->
