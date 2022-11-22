@@ -1,4 +1,4 @@
-<!DOCTYPE html> <!--#3.7 State Practice part Two (11:29)-->
+<!DOCTYPE html> <!--#3.8 Recap (06:57)-->
 <html>
   <body>
     <div id="root"></div>
@@ -9,14 +9,14 @@
   <script type="text/babel">
     function App() {
       const [amount, setAmount] = React.useState(0);
-      const [flipped, setFlipped] = React.useState(false);
+      const [inverted, setInverted] = React.useState(false);
       const onChange = (event) => {
         setAmount(event.target.value);
       };
       const reset = () => setAmount(0);
-      const onFlip = () => {
+      const onInvert = () => {
         reset();
-        setFlipped((current) => !current);
+        setInverted((current) => !current);
       };
       return (
         <div>
@@ -24,27 +24,29 @@
           <div>
             <label htmlFor="minutes">Minutes</label>
             <input
-              value={flipped ? amount * 60 : amount}
+              value={inverted ? amount * 60 : amount}
               id="minutes"
               placeholder="Minutes"
               type="number"
               onChange={onChange}
-              disabled={flipped}
+              disabled={inverted}
             />
           </div>
           <div>
             <label htmlFor="hours">Hours</label>
             <input
-              value={flipped ? amount : Math.round(amount / 60)} //value={minutes / 60}
+              value={inverted ? amount : Math.round(amount / 60)} //value={minutes / 60}
               id="hours"
               placeholder="Hours"
               type="number"
-              disabled={!flipped}
+              disabled={!inverted}
               onChange={onChange}
             />
           </div>
           <button onClick={reset}>Reset</button>
-          <button onClick={onFlip}>Flip</button>
+          <button onClick={onInvert}>
+            {inverted ? "Turn back" : "Invert"}
+          </button>
         </div>
       );
     }
@@ -52,5 +54,5 @@
     ReactDOM.render(<App />, root);
   </script>
 </html>
-<!--20221120 09:45 ~ 10:27--->
+<!--20221122 10:10 ~ 11:00--->
 <!--git remote add origin https://github.com/mjshin97/filmAppCloneCode.git-->
