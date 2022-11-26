@@ -1,37 +1,38 @@
-<!DOCTYPE html> <!--#4.1 Memo (12:33)-->
+<!DOCTYPE html> <!--#4.2 Prop Types (08:14)-->
 <html>
   <body>
     <div id="root"></div>
   </body>
   <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script> <!--this lines of code will notify you what you did wrong in React-->
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
-    function Btn({ text, onClick }) {
-      console.log(text, "was rendered");
+    function Btn({ text, fontSize = 12 }) {
       return (
         <button
-          onClick={onClick}
           style={{
             backgroundColor: "tomato",
             color: "white",
             padding: "10px 20px",
             border: 0,
             borderRadius: 10,
+            fontSize: fontSize,
           }}
         >
           {text}
         </button>
       );
     }
-    const MemorizedBtn = React.memo(Btn);
+    Btn.propTypes = {
+      text: PropTypes.string.isRequired,
+      fontSize: PropTypes.number,
+    };
     function App() {
-      const [value, setValue] = React.useState("Save Changes");
-      const changeValue = () => setValue("Revert Changes");
       return (
         <div>
-          <MemorizedBtn text={value} onClick={changeValue} />
-          <MemorizedBtn text="Continue" />
+          <Btn text="Save Changes" fontSize={18} />
+          <Btn text={"continue"} />
         </div>
       );
     }
@@ -39,5 +40,5 @@
     ReactDOM.render(<App />, root);
   </script>
 </html>
-<!--20221125 15:02 ~ 15:51-->
+<!--20221126 08:17 ~ 09:17-->
 <!--git remote add origin https://github.com/mjshin97/filmAppCloneCode.git-->
