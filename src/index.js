@@ -1,4 +1,4 @@
-//#6.3 Recap (05:05)
+//#6.4 Cleanup (13:20)
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
