@@ -1,4 +1,4 @@
-//#6.4 Cleanup (13:20)
+//#7.0 To Do List part One (13:00)
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
