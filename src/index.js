@@ -1,4 +1,4 @@
-//#5.1 Tour of CRA (12:40)
+//#6.0 Introduction (05:51)
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
