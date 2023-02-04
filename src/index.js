@@ -1,4 +1,4 @@
-//#7.1 To Do List part Two (11:30)
+//#7.2 Coin Tracker (12:51)
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
