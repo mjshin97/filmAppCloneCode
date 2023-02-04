@@ -1,4 +1,4 @@
-//#7.0 To Do List part One (13:00)
+//#7.1 To Do List part Two (11:30)
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
