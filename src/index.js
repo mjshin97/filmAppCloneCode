@@ -1,4 +1,4 @@
-//#7.2 Coin Tracker (12:51)
+//#7.3 Movie App part One (16:13)
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
