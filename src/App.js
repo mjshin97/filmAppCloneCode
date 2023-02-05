@@ -1,4 +1,12 @@
+function App() {
+  return null;
+}
+
+export default App;
+
+/*
 import { useEffect, useState } from "react";
+import Movie from "./components/Movie";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -14,16 +22,6 @@ function App() {
   };
   useEffect(() => {
     getMovies();
-    /*
-    fetch(
-      `https://yts.mx/api/v2/list_movies.json?minimum_rating=8.8&sort_by=year`
-    )
-      .then((response) => response.json())
-      .then((json) => {
-        setMovies(json.data.movies);
-        setLoading(false);
-        });
-*/
   }, []);
   return (
     <div>
@@ -32,16 +30,13 @@ function App() {
       ) : (
         <div>
           {movies.map((movie) => (
-            <div key={movie.id}>
-              <img src={movie.medium_cover_image}/>
-              <h2>{movie.title}</h2>
-              <p>{movie.summary}</p>
-              <ul>
-                {movie.genres.map((g) => (
-                  <li key={g}>{g}</li>
-                ))}
-              </ul>
-            </div>
+            <Movie
+              key={movie.id}
+              coverImg={movie.medium_cover_image}
+              title={Movie.title}
+              summary={movie.summary}
+              genres={movie.genres}
+            />
           ))}
         </div>
       )}
@@ -50,3 +45,6 @@ function App() {
 }
 
 export default App;
+*/
+
+//when you writing "{movies.map((movie) => <Movie />)}"in line 24 it Movie should imported automatically in line 2

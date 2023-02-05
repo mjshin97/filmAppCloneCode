@@ -1,4 +1,4 @@
-//#7.3 Movie App part One (16:13)
+//#7.4 Movie App part Two (10:58)
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
