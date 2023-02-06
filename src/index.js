@@ -1,4 +1,4 @@
-//#7.5 React Router (11:29)
+//#7.6 Parameters (11:54)
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
