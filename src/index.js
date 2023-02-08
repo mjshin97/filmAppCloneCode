@@ -1,4 +1,4 @@
-//#7.6 Parameters (11:54)
+//#7.7 Publishing (07:42) Error exist
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
